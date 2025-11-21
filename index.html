@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTX E-SPORTS — Next-Gen Tournament Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Orbitron', sans-serif;
+        background-color: #050816;
+      }
+      .neon-glow {
+        filter: drop-shadow(0 0 5px #00c2ff) drop-shadow(0 0 15px #00c2ff);
+      }
+      .text-glow {
+        text-shadow: 0 0 5px rgba(0, 194, 255, 0.7), 0 0 10px rgba(0, 194, 255, 0.5), 0 0 20px rgba(0, 194, 255, 0.3);
+      }
+      .btn-glow {
+        box-shadow: 0 0 5px #00c2ff, 0 0 15px #00c2ff, 0 0 30px #00c2ff, inset 0 0 5px #00c2ff;
+        transition: all 0.3s ease-in-out;
+      }
+      .btn-glow:hover {
+        box-shadow: 0 0 10px #00f0ff, 0 0 25px #00f0ff, 0 0 50px #00f0ff, inset 0 0 10px #00f0ff;
+      }
+      .animated-border {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .animated-border::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400%;
+        height: 400%;
+        background: conic-gradient(
+          transparent,
+          transparent,
+          transparent,
+          #00c2ff
+        );
+        animation: rotate 4s linear infinite;
+        transform-origin: center center;
+        z-index: -1;
+      }
+      @keyframes rotate {
+        from { transform: translate(-50%, -50%) rotate(0deg); }
+        to { transform: translate(-50%, -50%) rotate(360deg); }
+      }
+      @keyframes count-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .count-up {
+        animation: count-up 1s ease-out forwards;
+      }
+      .hologram-effect {
+        position: relative;
+        overflow: hidden;
+      }
+      .hologram-effect::after {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(0, 194, 255, 0.2) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: rotate(25deg);
+        animation: hologram-scan 6s infinite ease-in-out;
+      }
+      @keyframes hologram-scan {
+        0%, 100% { top: -100%; }
+        50% { top: 0; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-icons/": "https://aistudiocdn.com/react-icons@^5.5.0/",
+    "react-icons": "https://aistudiocdn.com/react-icons@^5.5.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
